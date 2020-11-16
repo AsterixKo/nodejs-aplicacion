@@ -32,3 +32,15 @@ app.get('/clients', (req, res) => {
 
     res.send(listClients);
 });
+
+//Declaración de una ruta en node
+//hacemos la petición con postman
+app.get('/test-url-param/:paramName', (req, res) => {
+    console.log(`Este es el contenido de req.params.paramName: ${req.params.paramName}`);
+    res.send(`Este es el contenido de paramName: ${req.params.paramName}`);
+});
+
+//ponemos la petición sin parametro para que devuelva algo por defecto
+app.get('/test-url-param/', (req, res) => {
+    res.send(`Param url workin without param`);
+});
