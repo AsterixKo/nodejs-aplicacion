@@ -35,6 +35,19 @@ app.get('/clients', (req, res) => {
 
 //Declaración de una ruta en node
 //hacemos la petición con postman
+app.get('/client/:id', (req, res) => {
+    console.log(`Este es el contenido de req.params.paramName: ${req.params.id}`);
+    const client = listClients.filter(value => value.id === req.params.id);
+    res.send(client);
+});
+
+//ponemos la petición sin parametro para que devuelva algo por defecto
+app.get('/client/', (req, res) => {
+    res.send(`Param url working without param`);
+});
+
+//Declaración de una ruta en node
+//hacemos la petición con postman
 app.get('/test-url-param/:paramName', (req, res) => {
     console.log(`Este es el contenido de req.params.paramName: ${req.params.paramName}`);
     res.send(`Este es el contenido de paramName: ${req.params.paramName}`);
@@ -42,5 +55,5 @@ app.get('/test-url-param/:paramName', (req, res) => {
 
 //ponemos la petición sin parametro para que devuelva algo por defecto
 app.get('/test-url-param/', (req, res) => {
-    res.send(`Param url workin without param`);
+    res.send(`Param url working without param`);
 });
