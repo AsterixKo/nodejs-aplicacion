@@ -1,6 +1,7 @@
 import express from 'express';
 import indexRouter from './routes';
-import ProductsRoutes from './routes/products.routes';
+import productRoutes from './routes/products.routes';
+// import ProductsRoutes from './routes/products.routes';
 
 //inicializamos express desde una constante llamada app, que será la que tenga toda la funcionalidad que me aporta express como framework de node
 const app = express();
@@ -16,4 +17,4 @@ app.listen(app.get('port'), () => {
 
 //Hacemos uso del método use de Express, porque
 app.use('/clients', indexRouter);
-// app.use('/products', ProductsRoutes);
+app.use('/products', productRoutes);
