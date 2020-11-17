@@ -1,25 +1,16 @@
-
 import { Request, Response, Router } from 'express';
+import {productController} from '../controllers/products.controller';
+// import { ProductsController } from '../controllers/products.controller';
 
-interface Products {
-    id: Number,
-    title: String
-}
 class ProductsRoutes {
 
     router: Router = Router();
-
-    private products: Array<Products> = [
-        { id: 1, title: 'TV 32 "' },
-        { id: 2, title: 'XBOX' }
-    ];
+    // productsController: ProductsController = new ProductsController();
 
     // Generar las rutas a través del constructor de la clase
     constructor() {
-        this.router.get('/', (req: Request, res: Response) => {
-            res.send(this.products);
-        });
-
+        this.router.get('/', productController.index);
+        this.router.get('/show', productController.show);
     }
 
 }
