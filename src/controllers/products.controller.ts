@@ -17,7 +17,7 @@ class ProductsController {
         res.send(productController.products);
     }
     public show(req: Request, res: Response) {
-        res.send('Show of products');
+        res.render('layouts/show', { title: 'prueba' });
     }
 }
 
