@@ -11,6 +11,7 @@ class ProductsRoutes {
     constructor() {
         this.router.get('/', productController.index);
         this.router.get('/show', productController.show);
+        this.router.get('/showProductsView', productController.showProductsView);
     }
 
 }

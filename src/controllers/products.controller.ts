@@ -19,6 +19,9 @@ class ProductsController {
     public show(req: Request, res: Response) {
         res.render('layouts/show', { title: 'prueba' });
     }
+    public showProductsView(req: Request, res: Response) {
+        res.render('layouts/showProductsView', { products: productController.products});
+    }
 }
 
 export const productController = new ProductsController();
