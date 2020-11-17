@@ -1,7 +1,6 @@
 import express from 'express';
-import indexRouter from './routes';
+import indexRouter from './routes';//aquí me ahorro el index
 import productRoutes from './routes/products.routes';
-// import ProductsRoutes from './routes/products.routes';
 
 //inicializamos express desde una constante llamada app, que será la que tenga toda la funcionalidad que me aporta express como framework de node
 const app = express();
